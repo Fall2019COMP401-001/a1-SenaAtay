@@ -7,21 +7,20 @@ public class A1Jedi {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-
-		int productsandprices;
-		int ningredient;
-		String ingredient;
 		
 		
-		productsandprices = scan.nextInt();
-		String [] name = new String[productsandprices];
-		int [] customercount = new int[productsandprices]; 
-		int [] itemcount = new int[productsandprices]; 
+		int productsandprices = scan.nextInt();
+		String [] productname = new String[productsandprices];
+		int [] numberofpeople = new int[productsandprices]; 
+		int [] numberofproducts = new int[productsandprices]; 
 		
 		for(int i=0;i<productsandprices;i++) {
-			name[i] = scan.next();
+			productname[i] = scan.next();
 			scan.nextDouble();
 		}
+		
+		int ningredient;
+		String ingredient;
 		int ingredientcount;
 		
 		int ncustomers = scan.nextInt();
@@ -29,22 +28,24 @@ public class A1Jedi {
 			scan.next();
 			scan.next();
 			ningredient = scan.nextInt();
-			for(int j=0;j<productsandprices;j++) {
+			for(int j=0;j<ningredient;j++) {
 				ingredientcount = scan.nextInt();
 				ingredient= scan.next();
 				for(int k=0;k<productsandprices;k++) {
-					if (ingredient.equals(name[k]));
-					customercount[k]++;
-					itemcount[k] = itemcount[k] + ingredientcount;
+					if (ingredient.equals(productname[k])) {
+					numberofpeople[k]++;
+					numberofproducts[k] = numberofproducts[k] + ingredientcount;
+					}
 				}		
 			}
 		}
-		for(int i=0;i<productsandprices;i++) {
-			if (customercount[i] == 0) {
-				System.out.println("No customers bought " + name[i]);
+		for(int m=0;m<productsandprices;m++) {
+			if (numberofpeople[m] == 0) {
+				System.out.println("No customers bought " + productname[m]);
 			} else {
-				System.out.println(customercount[i] + "customers bought " + itemcount + " " + name[i]);
+				System.out.println(numberofpeople[m] + " customers bought " + numberofproducts[m] + " " + productname[m]);
 			}
 		}
 	}
 }
+
