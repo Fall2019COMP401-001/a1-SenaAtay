@@ -63,7 +63,7 @@ public class A1Adept {
 			}
 		System.out.println("Biggest: " + biggestpersonfirstname + " "  + biggestpersonlastname + ": " + "(" + biggest + ")");
 		System.out.println("Smallest: " + smallestpersonfirstname + " "  + smallestpersonlastname + ": " + "(" + smallest + ")");
-		System.out.println("Average: " + mtotalcost/numberofpeople);
+		System.out.printf("Average: %.2f %n", mtotalcost/numberofpeople);
 		
 		}
 	}
